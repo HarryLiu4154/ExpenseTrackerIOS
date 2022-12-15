@@ -14,6 +14,7 @@
 		FE408E33294933870051644C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408E32294933870051644C /* Persistence.swift */; };
 		FE408E36294933870051644C /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE408E34294933870051644C /* ExpenseTracker.xcdatamodeld */; };
 		FE408E3D2949C4640051644C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408E3C2949C4640051644C /* Extensions.swift */; };
+		FE408E3F294AA3040051644C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408E3E294AA3040051644C /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FE408E32294933870051644C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FE408E35294933870051644C /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
 		FE408E3C2949C4640051644C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FE408E3E294AA3040051644C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		FE408E28294933840051644C /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FE408E40294AA30C0051644C /* Model */,
 				FE408E29294933840051644C /* ExpenseTrackerApp.swift */,
 				FE408E2B294933840051644C /* ContentView.swift */,
 				FE408E3C2949C4640051644C /* Extensions.swift */,
@@ -74,6 +77,14 @@
 				FE408E30294933870051644C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FE408E40294AA30C0051644C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE408E3E294AA3040051644C /* Transaction.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			files = (
 				FE408E3D2949C4640051644C /* Extensions.swift in Sources */,
 				FE408E33294933870051644C /* Persistence.swift in Sources */,
+				FE408E3F294AA3040051644C /* Transaction.swift in Sources */,
 				FE408E2C294933840051644C /* ContentView.swift in Sources */,
 				FE408E2A294933840051644C /* ExpenseTrackerApp.swift in Sources */,
 				FE408E36294933870051644C /* ExpenseTracker.xcdatamodeld in Sources */,
