@@ -48,9 +48,13 @@ struct ContentView: View {
             .background(Color.background)
             .toolbar {
                 ToolbarItem {
-                    Image(systemName: "bell.badge")
-                        .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color.icon, .primary)
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(Color.icon, .primary)
+                    }
                 }
             }
         }

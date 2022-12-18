@@ -26,6 +26,7 @@ struct TransactionList: View {
                 }
             }
             .listStyle(.plain)
+            .background(Color.background)
         }
         .navigationTitle("Transactions")
         .navigationBarTitleDisplayMode(.inline)
