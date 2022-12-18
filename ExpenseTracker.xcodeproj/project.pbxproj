@@ -20,6 +20,9 @@
 		FE408E4A294BE2160051644C /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = FE408E49294BE2160051644C /* SwiftUIFontIcon */; };
 		FE408EA9294EFFCA0051644C /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408EA8294EFFCA0051644C /* TransactionListViewModel.swift */; };
 		FE408EAC294F00DA0051644C /* TransactionDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE408EAA294F00DA0051644C /* TransactionDataModel.xcdatamodeld */; };
+		FE408EB0294F1BDA0051644C /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408EAF294F1BDA0051644C /* RecentTransactionList.swift */; };
+		FE408EB2294F26C30051644C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408EB1294F26C30051644C /* Category.swift */; };
+		FE408EB4294F3A180051644C /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408EB3294F3A180051644C /* TransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		FE408E46294AA6940051644C /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		FE408EA8294EFFCA0051644C /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		FE408EAB294F00DA0051644C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FE408EAF294F1BDA0051644C /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
+		FE408EB1294F26C30051644C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FE408EB3294F3A180051644C /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			children = (
 				FE408E3E294AA3040051644C /* Transaction.swift */,
 				FE408EAA294F00DA0051644C /* TransactionDataModel.xcdatamodeld */,
+				FE408EB1294F26C30051644C /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +112,8 @@
 			children = (
 				FE408E2B294933840051644C /* ContentView.swift */,
 				FE408E46294AA6940051644C /* TransactionRow.swift */,
+				FE408EAF294F1BDA0051644C /* RecentTransactionList.swift */,
+				FE408EB3294F3A180051644C /* TransactionList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,9 +201,12 @@
 				FE408E2C294933840051644C /* ContentView.swift in Sources */,
 				FE408E42294AA4BF0051644C /* PreviewData.swift in Sources */,
 				FE408E47294AA6940051644C /* TransactionRow.swift in Sources */,
+				FE408EB0294F1BDA0051644C /* RecentTransactionList.swift in Sources */,
 				FE408EAC294F00DA0051644C /* TransactionDataModel.xcdatamodeld in Sources */,
 				FE408E2A294933840051644C /* ExpenseTrackerApp.swift in Sources */,
+				FE408EB4294F3A180051644C /* TransactionList.swift in Sources */,
 				FE408E36294933870051644C /* ExpenseTracker.xcdatamodeld in Sources */,
+				FE408EB2294F26C30051644C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

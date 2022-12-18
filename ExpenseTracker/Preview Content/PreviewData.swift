@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 var transactionPreviewData = Transaction(
     date: "12/14/2022",
@@ -23,3 +24,8 @@ var transactionPreviewData = Transaction(
 )
 
 var transactionListPreviewData = [Transaction](repeating: transactionPreviewData, count: 5)
+
+var transactionMOPreviewData = NSEntityDescription.insertNewObject(forEntityName: "TransactionMO", into: PersistenceController.shared.container.viewContext) as! TransactionMO
+
+var transactionMOListPreviewData = [TransactionMO](repeating: transactionMOPreviewData, count: 5)
+

@@ -17,6 +17,8 @@ struct ContentView: View {
                     Text("Overview")
                         .font(.title)
                         .bold()
+                    
+                    RecentTransactionList()
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -32,6 +34,7 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(.stack)
+        .accentColor(.primary)
     }
 }
 

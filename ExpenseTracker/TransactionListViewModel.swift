@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 import UIKit
 
+typealias TransactionGroup = [String: [Transaction]]
+
 final class TransactionListViewModel : ObservableObject {
     
     //@Published var transactions: [Transaction] = []
@@ -17,7 +19,8 @@ final class TransactionListViewModel : ObservableObject {
 //        guard let url =
 //    }
     
-    @Published var transactions = [TransactionMO]()
+    @Published var transactionsMOList = [TransactionMO]()
+    @Published var transactions = [Transaction]()
     
     private static var shared : TransactionListViewModel?
     
@@ -55,8 +58,12 @@ final class TransactionListViewModel : ObservableObject {
             transactionToInsert.isTransfer = transaction.isTransfer
             transactionToInsert.isExpense = transaction.isExpense
             transactionToInsert.isEdited = transaction.isEdited
+            
+            //may not need these to be saved
             transactionToInsert.parsedDate = transaction.parsedDate
             transactionToInsert.signedAmount = transaction.signedAmount
+            transactionToInsert.icon = transaction.icon.rawValue
+            transactionToInsert.month = transaction.month
             
             transactionToInsert.id = UUID()
             
@@ -77,8 +84,13 @@ final class TransactionListViewModel : ObservableObject {
         do {
             let result = try self.moc.fetch(fetchRequest)
             print(#function, "Number of records fetched : \(result.count)")
+            self.transactionsMOList.removeAll()
+            self.transactionsMOList.insert(contentsOf: result, at: 0)
+            
             self.transactions.removeAll()
-            self.transactions.insert(contentsOf: result, at: 0)
+            for transactionMO in transactionsMOList {
+                self.transactions.append(Transaction(transactionMO: transactionMO))
+            }
             
         } catch let error as NSError{
             print(#function, "Could not fetch data from Database \(error)")
@@ -156,5 +168,13 @@ final class TransactionListViewModel : ObservableObject {
         else {
             print(#function, "No matching data found")
         }
+    }
+    
+    func groupTransactionByMonth() -> TransactionGroup {
+        guard !transactions.isEmpty else { return [:] }
+        
+        let groupedTransactions = TransactionGroup(grouping: transactions, by: { $0.month })
+        
+        return groupedTransactions
     }
 }

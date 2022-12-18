@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct ExpenseTrackerApp: App {
     let persistenceController = PersistenceController.shared
-    let transactionViewModel = TransactionListViewModel(context: PersistenceController.shared.container.viewContext)
+    @StateObject var transactionListViewModel = TransactionListViewModel(context: PersistenceController.shared.container.viewContext)
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(transactionViewModel)
+                .environmentObject(transactionListViewModel)
         }
     }
 }
