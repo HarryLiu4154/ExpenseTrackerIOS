@@ -12,6 +12,7 @@ import SwiftUICharts
 struct ContentView: View {
     
     @EnvironmentObject var transactionListViewModel : TransactionListViewModel
+    @State private var isAddingTransactionPresented = false
     
     var body: some View {
         NavigationView {
@@ -49,11 +50,14 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        
+                        isAddingTransactionPresented.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .symbolRenderingMode(.palette)
                             .foregroundStyle(Color.icon, .primary)
+                    }
+                    .sheet(isPresented: $isAddingTransactionPresented) {
+                        NewTransactionView()
                     }
                 }
             }

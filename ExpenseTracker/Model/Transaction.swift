@@ -15,7 +15,7 @@ enum TransactionType : String {
 
 struct Transaction : Identifiable, Hashable {
     let id : UUID = UUID()
-    let date :  String
+    let date : String //
     let institution : String
     let account : String
     let merchant : String

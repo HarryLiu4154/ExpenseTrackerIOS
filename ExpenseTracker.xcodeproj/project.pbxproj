@@ -25,6 +25,11 @@
 		FE408EB4294F3A180051644C /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE408EB3294F3A180051644C /* TransactionList.swift */; };
 		FE408EB7294F3E500051644C /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = FE408EB6294F3E500051644C /* Collections */; };
 		FE408EBA294F3F440051644C /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = FE408EB9294F3F440051644C /* SwiftUICharts */; };
+		FEABCABC294FEC060073F7AA /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABCABB294FEC060073F7AA /* NewTransactionView.swift */; };
+		FEABCABE294FEC1D0073F7AA /* UpdateTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABCABD294FEC1D0073F7AA /* UpdateTransactionView.swift */; };
+		FEABCAC0295015AA0073F7AA /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABCABF295015AA0073F7AA /* CurrencyTextField.swift */; };
+		FEABCAC2295016050073F7AA /* CurrencyUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABCAC1295016050073F7AA /* CurrencyUITextField.swift */; };
+		FEABCAC42950168B0073F7AA /* NumberFormatterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEABCAC32950168B0073F7AA /* NumberFormatterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,12 @@
 		FE408EAF294F1BDA0051644C /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 		FE408EB1294F26C30051644C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FE408EB3294F3A180051644C /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		FEABCABB294FEC060073F7AA /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		FEABCABD294FEC1D0073F7AA /* UpdateTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionView.swift; sourceTree = "<group>"; };
+		FEABCABF295015AA0073F7AA /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		FEABCAC1295016050073F7AA /* CurrencyUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITextField.swift; sourceTree = "<group>"; };
+		FEABCAC32950168B0073F7AA /* NumberFormatterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterProtocol.swift; sourceTree = "<group>"; };
+		FEABCAC5295043AF0073F7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +90,14 @@
 		FE408E28294933840051644C /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FEABCAC5295043AF0073F7AA /* Info.plist */,
 				FE408E43294AA65D0051644C /* View */,
 				FE408E40294AA30C0051644C /* Model */,
 				FE408E29294933840051644C /* ExpenseTrackerApp.swift */,
 				FE408E2D294933870051644C /* Assets.xcassets */,
 				FE408E32294933870051644C /* Persistence.swift */,
 				FE408EA8294EFFCA0051644C /* TransactionListViewModel.swift */,
+				FEABCAC32950168B0073F7AA /* NumberFormatterProtocol.swift */,
 				FE408E34294933870051644C /* ExpenseTracker.xcdatamodeld */,
 				FE408E2F294933870051644C /* Preview Content */,
 			);
@@ -118,6 +131,10 @@
 				FE408E46294AA6940051644C /* TransactionRow.swift */,
 				FE408EAF294F1BDA0051644C /* RecentTransactionList.swift */,
 				FE408EB3294F3A180051644C /* TransactionList.swift */,
+				FEABCABB294FEC060073F7AA /* NewTransactionView.swift */,
+				FEABCABF295015AA0073F7AA /* CurrencyTextField.swift */,
+				FEABCAC1295016050073F7AA /* CurrencyUITextField.swift */,
+				FEABCABD294FEC1D0073F7AA /* UpdateTransactionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,17 +221,22 @@
 			files = (
 				FE408E3D2949C4640051644C /* Extensions.swift in Sources */,
 				FE408E33294933870051644C /* Persistence.swift in Sources */,
+				FEABCABE294FEC1D0073F7AA /* UpdateTransactionView.swift in Sources */,
 				FE408EA9294EFFCA0051644C /* TransactionListViewModel.swift in Sources */,
 				FE408E3F294AA3040051644C /* Transaction.swift in Sources */,
 				FE408E2C294933840051644C /* ContentView.swift in Sources */,
+				FEABCAC2295016050073F7AA /* CurrencyUITextField.swift in Sources */,
+				FEABCAC0295015AA0073F7AA /* CurrencyTextField.swift in Sources */,
 				FE408E42294AA4BF0051644C /* PreviewData.swift in Sources */,
 				FE408E47294AA6940051644C /* TransactionRow.swift in Sources */,
 				FE408EB0294F1BDA0051644C /* RecentTransactionList.swift in Sources */,
 				FE408EAC294F00DA0051644C /* TransactionDataModel.xcdatamodeld in Sources */,
 				FE408E2A294933840051644C /* ExpenseTrackerApp.swift in Sources */,
+				FEABCABC294FEC060073F7AA /* NewTransactionView.swift in Sources */,
 				FE408EB4294F3A180051644C /* TransactionList.swift in Sources */,
 				FE408E36294933870051644C /* ExpenseTracker.xcdatamodeld in Sources */,
 				FE408EB2294F26C30051644C /* Category.swift in Sources */,
+				FEABCAC42950168B0073F7AA /* NumberFormatterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +367,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -373,7 +396,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExpenseTracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

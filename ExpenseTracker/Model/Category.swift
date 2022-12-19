@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUIFontIcon
 
-struct Category {
+struct Category : Identifiable {
     let id: Int
     let name: String
     let icon: FontAwesomeCode

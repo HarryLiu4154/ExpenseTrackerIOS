@@ -43,10 +43,20 @@ extension Date {
     func formatted() -> String {
         return self.formatted(.dateTime.year().month().day())
     }
+    
+    func formatForModel() -> String {
+        return self.formatted(.dateTime.month().day().year())
+    }
 }
 
 extension Double {
     func roundedTo2Digits() -> Double {
         return (self * 100).rounded() / 100
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
