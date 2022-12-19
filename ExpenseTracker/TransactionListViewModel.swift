@@ -62,10 +62,10 @@ final class TransactionListViewModel : ObservableObject {
             transactionToInsert.isEdited = transaction.isEdited
             
             //may not need these to be saved
-            transactionToInsert.parsedDate = transaction.parsedDate
-            transactionToInsert.signedAmount = transaction.signedAmount
-            transactionToInsert.icon = transaction.icon.rawValue
-            transactionToInsert.month = transaction.month
+//            transactionToInsert.parsedDate = transaction.parsedDate
+//            transactionToInsert.signedAmount = transaction.signedAmount
+//            transactionToInsert.icon = transaction.icon.rawValue
+//            transactionToInsert.month = transaction.month
             
             transactionToInsert.id = UUID()
             
@@ -81,13 +81,14 @@ final class TransactionListViewModel : ObservableObject {
     
     func getAllTransactions() {
         let fetchRequest = NSFetchRequest<TransactionMO>(entityName: ENTITY_NAME)
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "date", ascending: true)]
         
         do {
             let result = try self.moc.fetch(fetchRequest)
             print(#function, "Number of records fetched : \(result.count)")
             self.transactionsMOList.removeAll()
             self.transactionsMOList.insert(contentsOf: result, at: 0)
+            self.transactionsMOList = self.transactionsMOList.sorted(by: { $0.date!.parseDate() > $1.date!.parseDate() })
             
             self.transactions.removeAll()
             for transactionMO in transactionsMOList {
@@ -156,8 +157,8 @@ final class TransactionListViewModel : ObservableObject {
                 transactionToUpdate.isTransfer = updatedTransaction.isTransfer
                 transactionToUpdate.isExpense = updatedTransaction.isExpense
                 transactionToUpdate.isEdited = updatedTransaction.isEdited
-                transactionToUpdate.parsedDate = updatedTransaction.parsedDate
-                transactionToUpdate.signedAmount = updatedTransaction.signedAmount
+//                transactionToUpdate.parsedDate = updatedTransaction.parsedDate
+//                transactionToUpdate.signedAmount = updatedTransaction.signedAmount
                 
                 try self.moc.save()
                 objectWillChange.send()
@@ -175,7 +176,7 @@ final class TransactionListViewModel : ObservableObject {
     func groupTransactionByMonth() -> TransactionGroup {
         guard !transactions.isEmpty else { return [:] }
         
-        let groupedTransactions = TransactionGroup(grouping: transactions, by: { $0.month })
+        let groupedTransactions = TransactionGroup(grouping: transactions) { $0.month }
         
         return groupedTransactions
     }

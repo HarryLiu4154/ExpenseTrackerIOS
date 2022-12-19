@@ -10,6 +10,8 @@ import SwiftUI
 struct TransactionList: View {
     
     @EnvironmentObject var transactionListViewModel : TransactionListViewModel
+    @State private var isAddingTransactionPresented = false
+    @State private var isEditingTransactionPresented = false
     
     var body: some View {
         VStack {
@@ -18,7 +20,14 @@ struct TransactionList: View {
                     Section {
                         ForEach(transactions) { transaction in
                             TransactionRow(transaction: transaction)
+                                .onTapGesture {
+                                    isEditingTransactionPresented.toggle()
+                                }
+                                .sheet(isPresented: $isEditingTransactionPresented) {
+                                    UpdateTransactionView(transaction: transaction)
+                                }
                         }
+                        .onDelete(perform: delete)
                     } header: {
                         Text(month)
                     }
@@ -26,10 +35,36 @@ struct TransactionList: View {
                 }
             }
             .listStyle(.plain)
-            .background(Color.background)
+            //.background(Color.background)
         }
         .navigationTitle("Transactions")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    isAddingTransactionPresented.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.icon, .primary)
+                }
+                .sheet(isPresented: $isAddingTransactionPresented) {
+                    NewTransactionView()
+                }
+                
+                EditButton()
+            }
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        for i in offsets.makeIterator() {
+            let tempId = transactionListViewModel.transactions.first(where: { $0.id == transactionListViewModel.transactions[i].id })!.id
+            transactionListViewModel.deleteTransaction(id: tempId)
+        }
+        
+        transactionListViewModel.transactions.remove(atOffsets: offsets)
+        transactionListViewModel.getAllTransactions()
     }
 }
 

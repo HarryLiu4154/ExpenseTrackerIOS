@@ -42,7 +42,7 @@ struct TransactionRow: View {
             
             Text(transaction.signedAmount, format: .currency(code: "CAD"))
                 .bold()
-                .foregroundColor(transaction.type == TransactionType.credit.rawValue ? Color.text : .primary)
+                .foregroundColor(transaction.type == TransactionType.credit.rawValue ? Color.text : .primary) //credit mean you're getting money
             
         }
         .padding([.top, .bottom], 8)

@@ -14,7 +14,7 @@ enum TransactionType : String {
 }
 
 struct Transaction : Identifiable, Hashable {
-    let id : UUID = UUID()
+    let id : UUID
     let date : String //
     let institution : String
     let account : String
@@ -49,6 +49,23 @@ struct Transaction : Identifiable, Hashable {
     }
     
     init(date: String, institution: String, account: String, merchant: String, amount: Double, type: TransactionType.RawValue, categoryId: Int64, category: String, isPending: Bool, isTransfer: Bool, isExpense: Bool, isEdited: Bool) {
+        self.id = UUID()
+        self.date = date
+        self.institution = institution
+        self.account = account
+        self.merchant = merchant
+        self.amount = amount
+        self.type = type
+        self.categoryId = categoryId
+        self.category = category
+        self.isPending = isPending
+        self.isTransfer = isTransfer
+        self.isExpense = isExpense
+        self.isEdited = isEdited
+    }
+    
+    init(id: UUID, date: String, institution: String, account: String, merchant: String, amount: Double, type: TransactionType.RawValue, categoryId: Int64, category: String, isPending: Bool, isTransfer: Bool, isExpense: Bool, isEdited: Bool) {
+        self.id = id
         self.date = date
         self.institution = institution
         self.account = account
@@ -64,6 +81,7 @@ struct Transaction : Identifiable, Hashable {
     }
     
     init(transactionMO: TransactionMO) {
+        self.id = transactionMO.id!
         self.date = transactionMO.date!
         self.institution = transactionMO.institution!
         self.account = transactionMO.account!

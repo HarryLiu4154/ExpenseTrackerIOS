@@ -22,7 +22,7 @@ struct NewTransactionView: View {
     @State private var amount : Int = 0
     private var numberFormatter : NumberFormatterProtocol
     
-    @State private var type : TransactionType.RawValue = "credit"
+    @State private var type : TransactionType.RawValue = "debit"
     
     @State private var mainCategory : String = "Auto & Transport"
     @State private var mainCategoryId : Int64 = 1
@@ -80,11 +80,11 @@ struct NewTransactionView: View {
                 
                 Section {
                     Picker("Picker", selection: $type) {
-                        Text("Credit")
-                            .tag("credit")
-                        
                         Text("Debit")
                             .tag("debit")
+                        
+                        Text("Credit")
+                            .tag("credit")
                     }
                     .onChange(of: type) { newValue in
                         isExpense = newValue == "credit" ? true : false
@@ -167,7 +167,7 @@ struct NewTransactionView: View {
                 date: self.date.formatForModel(),
                 institution: self.institution,
                 account: self.account,
-                merchant: self.account,
+                merchant: self.merchant,
                 amount: Double(self.amount) / 100,
                 type: self.type,
                 categoryId: subCategory == "" ? Int64(mainCategoryId) : Int64(Category.subCategories.first(where: { $0.name == subCategory })!.id),
